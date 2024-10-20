@@ -25,3 +25,19 @@ AWS (Amazon Web Services) provides multiple layers of security to protect resour
 
 ![Screenshot 2023-06-29 at 12 14 32 AM](https://github.com/iam-veeramalla/aws-devops-zero-to-hero/assets/43399466/30bbc9e8-6502-438b-8adf-ece8b81edce9)
 
+
+
+PRACTICAL : CREATE A VPC[vpc and more] with public and private subnets; create a EC2 instance and install python application
+
+launch EC2 INSTANCE and install python
+commands:
+>sudo apt-get update 
+>python3
+>python3 -m http.server 8000    ; simple http server runs on port 8000
+
+publicip:8000  ; access the application;app wont come
+
+verify the NACL on VPC; wether network allowed or not.
+verify SG of EC2 instance; to allow inbound traffic via port 8000.
+
+publicip:8000 ->accessible
