@@ -70,4 +70,24 @@ https://docs.aws.amazon.com/vpc/latest/userguide/vpc-example-private-subnets-nat
 ![image](https://github.com/iam-veeramalla/aws-devops-zero-to-hero/assets/43399466/89d8316e-7b70-4821-a6bf-67d1dcc4d2fb)
 
 
+practical: creating EC2 instance and deploying jenkins and accessing the jenkins
+ 
+	create an EC2 instance
+	create a key-value pair; save .pem file
+	copy public ip
+	login to server using .pem file : ssh .pem ubuntu@pubip
+ #install java : 
+	sudo apt install openjdk-11-jdk
+ #install jenkins
+	sudo wget -O /usr/share/keyrings/jenkins-keyring.asc \
+  https://pkg.jenkins.io/debian-stable/jenkins.io-2023.key
+echo "deb [signed-by=/usr/share/keyrings/jenkins-keyring.asc]" \
+  https://pkg.jenkins.io/debian-stable binary/ | sudo tee \
+  /etc/apt/sources.list.d/jenkins.list > /dev/null
+sudo apt-get update
+sudo apt-get install jenkins
+sudo systemctl status jenkins
+by default jenkins runs on port 8080
+access jenkins by pubip of ec2 -> pubip:8080
+#set port 8080 for ec2 ->ec2 security add inbound traffic rule 8080
 
