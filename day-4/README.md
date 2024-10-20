@@ -77,15 +77,19 @@ practical: creating EC2 instance and deploying jenkins and accessing the jenkins
 	copy public ip
 	login to server using .pem file : ssh .pem ubuntu@pubip
  #install java : 
-	sudo apt install openjdk-11-jdk
+sudo apt install openjdk-11-jdk
  #install jenkins
-	sudo wget -O /usr/share/keyrings/jenkins-keyring.asc \
+sudo wget -O /usr/share/keyrings/jenkins-keyring.asc \
   https://pkg.jenkins.io/debian-stable/jenkins.io-2023.key
+
 echo "deb [signed-by=/usr/share/keyrings/jenkins-keyring.asc]" \
   https://pkg.jenkins.io/debian-stable binary/ | sudo tee \
   /etc/apt/sources.list.d/jenkins.list > /dev/null
+
 sudo apt-get update
+
 sudo apt-get install jenkins
+
 sudo systemctl status jenkins
 by default jenkins runs on port 8080
 access jenkins by pubip of ec2 -> pubip:8080
